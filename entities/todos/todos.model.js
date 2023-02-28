@@ -3,10 +3,15 @@ import { database } from '../../database/database.js';
 
 const Todo = database.define('todo', {
   id: {
-    type: DataTypes.STRING,
+    type: DataTypes.UUIDV4,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true,
+  },
+
+  user_id: {
+    type: DataTypes.UUIDV4,
+    allowNull: false,
   },
 
   title: {
